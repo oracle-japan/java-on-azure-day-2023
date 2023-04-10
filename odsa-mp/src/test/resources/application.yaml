@@ -1,2 +1,20 @@
 security:
   enabled: false
+
+oracle:
+  ucp:
+    jdbc:
+      PoolDataSource:
+        ds1:
+          URL: jdbc:oracle:thin:@atp_high?TNS_ADMIN=/home/shukawam/work/java-on-azure-day-2023/wallet
+          connectionFactoryClassName: oracle.jdbc.replay.OracleDataSourceImpl
+          user: ADMIN
+          password: Wellcome#123
+          connectionPoolName: JDBC_UCP_POOL
+          initialPoolSize: 1
+          minPoolSize: 1
+          maxPoolSize: 1
+          timeoutCheckInterval: 10
+          inactiveConnectionTimeout: 10
+          queryTimeout: 600
+          fastConnectionFailoverEnabled: false
