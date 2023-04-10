@@ -34,9 +34,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./app
+          context: ./helidon-nima-examples
           push: true
           tags: |
             ${{ env.IMAGE }}:1.0.0
         env:
-          IMAGE: ghcr.io/${{ github.repository }}/app
+          IMAGE: ghcr.io/${{ github.repository }}/helidon-nima-examples
