@@ -1,0 +1,4 @@
+wallet/
+*.http
+.vscode/
+local-dev.sh

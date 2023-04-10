@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  namespace: app
+  labels:
+    app: app
+spec:
+  type: ClusterIP
+  selector:
+    app: app
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: app
+  namespace: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+        version: v1
+    spec:
+      volumes:
+        - name: wallet
+          configMap:
+            name: wallet-cm
+      containers:
+        - name: app
+          image: ghcr.io/oracle-japan/java-on-azure-day-2023/app:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - name: api
+              containerPort: 8080
+          env:
+            - name: oracle.ucp.jdbc.PoolDataSource.ds1.URL
+              valueFrom:
+                secretKeyRef:
+                  name: datasource-secret
+                  key: url
+            - name: oracle.ucp.jdbc.PoolDataSource.ds1.user
+              valueFrom:
+                secretKeyRef:
+                  name: datasource-secret
+                  key: username
+            - name: oracle.ucp.jdbc.PoolDataSource.ds1.password
+              valueFrom:
+                secretKeyRef:
+                  name: datasource-secret
+                  key: password
+          volumeMounts:
+            - mountPath: /var/cache
+              name: wallet
+              readOnly: true
