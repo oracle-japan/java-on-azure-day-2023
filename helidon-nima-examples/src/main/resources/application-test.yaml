@@ -17,7 +17,7 @@ oracle:
     jdbc:
       PoolDataSource:
         ds1:
-          URL: jdbc:oracle:thin:@atp_high?TNS_ADMIN=/home/shukawam/work/java-on-azure-day-2023/wallet
+          URL: jdbc:oracle:thin:@atp_high?TNS_ADMIN=/home/shukawam/work/java-on-azure-day-2023/kubernetes/wallet
           connectionFactoryClassName: oracle.jdbc.replay.OracleDataSourceImpl
           user: ADMIN
           password: Wellcome#123

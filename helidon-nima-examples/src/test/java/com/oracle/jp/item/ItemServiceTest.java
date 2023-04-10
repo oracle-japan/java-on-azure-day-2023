@@ -29,7 +29,8 @@ public class ItemServiceTest {
     @Test
     void testGetAllItems() {
         var items = itemService.getAllItem();
-        assertEquals(9, items.size());
+        var expected = 17;
+        assertEquals(expected, items.size());
     }
 
 }

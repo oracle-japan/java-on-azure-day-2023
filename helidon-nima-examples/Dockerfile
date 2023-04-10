@@ -6,7 +6,7 @@ RUN echo "done!"
 
 FROM eclipse-temurin:19-jre-alpine
 WORKDIR /helidon
-COPY --from=build /helidon/target/app.jar ./
+COPY --from=build /helidon/target/helidon-nima-examples.jar ./
 COPY --from=build /helidon/target/libs ./libs
-CMD ["java", "--enable-preview", "-jar", "app.jar"]
+CMD ["java", "--enable-preview", "-jar", "helidon-nima-examples.jar"]
 EXPOSE 8080
