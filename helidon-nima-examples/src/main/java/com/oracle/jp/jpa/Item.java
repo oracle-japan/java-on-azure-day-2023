@@ -1,4 +1,4 @@
-package com.oracle.jp.item;
+package com.oracle.jp.jpa;
 
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;

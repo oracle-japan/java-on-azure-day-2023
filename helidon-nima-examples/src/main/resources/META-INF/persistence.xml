@@ -23,7 +23,7 @@
 
     <persistence-unit name="pu1" transaction-type="JTA">
         <jta-data-source>ds1</jta-data-source>
-        <class>com.oracle.jp.item.Item</class>
+        <class>com.oracle.jp.jpa.Item</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
         </properties>
