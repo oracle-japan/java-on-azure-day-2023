@@ -33,6 +33,10 @@
             <groupId>io.helidon.microprofile.health</groupId>
             <artifactId>helidon-microprofile-health</artifactId>
         </dependency>
+         <dependency>
+            <groupId>io.helidon.microprofile</groupId>
+            <artifactId>helidon-microprofile-fault-tolerance</artifactId>
+        </dependency>
         <dependency>
             <groupId>jakarta.json.bind</groupId>
             <artifactId>jakarta.json.bind-api</artifactId>
