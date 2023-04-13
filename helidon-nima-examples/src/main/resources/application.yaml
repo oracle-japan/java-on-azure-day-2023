@@ -28,6 +28,6 @@ oracle:
 
 tracing:
   service: helidon-nima-examples
-  protocol: http
-  host: jaeger-collector.istio-system.svc.cluster.local
-  port: 14268
+  protocol: https
+  host: jaeger
+  port: 14250

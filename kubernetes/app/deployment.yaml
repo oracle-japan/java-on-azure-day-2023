@@ -41,6 +41,14 @@ spec:
                 secretKeyRef:
                   name: datasource-secret
                   key: password
+            - name: tracing.service
+              value: helidon-nima-examples
+            - name: tracing.protocol
+              value: https
+            - name: tracing.host
+              value: jaeger-collector.istio-system.svc.cluster.local
+            - name: tracing.port
+              value: "14250"
           readinessProbe:
             httpGet:
               path: /health/ready
