@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helidon-nima-examples
+  namespace: apps
+  labels:
+    app: helidon-nima-examples
+  annotations:
+    prometheus.io/scrape: "true"
+spec:
+  type: ClusterIP
+  selector:
+    app: helidon-nima-examples
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: http
