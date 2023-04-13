@@ -25,3 +25,9 @@ oracle:
           inactiveConnectionTimeout: 10
           queryTimeout: 600
           fastConnectionFailoverEnabled: false
+
+tracing:
+  service: helidon-nima-examples
+  protocol: http
+  host: jaeger-collector.istio-system.svc.cluster.local
+  port: 14268
