@@ -2,3 +2,4 @@ wallet/
 *.http
 .vscode/
 local-dev.sh
+kubernetes/secret
